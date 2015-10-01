@@ -1,0 +1,23 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'guestbook/style.css' %}" />
+
+
+{% if latest_message_list %}
+    <ul>
+    {% for message in latest_message_list %}
+        <li><a href="{% url 'guestbook:detail' message.id %}">{{ message.message_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No messages are available.</p>
+{% endif %}
+
+
+
+<form action="{% url 'guestbook:index'%}" method="post">
+	{% csrf_token %}
+	Message: <textarea type="text" name="fname" size="30"></textarea><br>
+	Name: <input type="text" name="lname"><br>
+  	<input type="submit" value="Submit" size="20">
+</form>

@@ -1,0 +1,24 @@
+li a {
+    color: black;
+    text-align: center;
+    font-family: "Lucida Console", Lucida, Monospace;
+    font-size: 30px;
+}
+
+body {
+    background: white url("images/background.gif") no-repeat;
+    background-size: 100% auto;
+    text-align: center;
+}
+
+ul {
+	list-style-type: none;
+}
+
+form {
+	font-size: 30px;
+}
+
+li{
+	margin-top: 20px;
+}
